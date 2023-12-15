@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// import { Dashboard } from "@/navigation/navigators";
+import { DashboardNavigator } from "@navigation/navigators";
+import ProvidersWrapper from "./ProvidersWrapper";
+import { Home } from "./src/screens/index";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
 
-export default function App() {
+function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {/* <StatusBar /> */}
+      <DashboardNavigator />
     </View>
   );
 }
+const AppWithProvider = () => {
+  return (
+    <ProvidersWrapper>
+      <App />
+    </ProvidersWrapper>
+  );
+};
+export default AppWithProvider;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // backgroundColor: "#fff",
+    // alignItems: "center",
+    justifyContent: "center",
   },
 });
