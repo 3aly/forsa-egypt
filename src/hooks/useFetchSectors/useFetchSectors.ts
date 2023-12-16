@@ -3,9 +3,9 @@ import { useQuery } from "@tanstack/react-query";
 
 export const useFetchSectors = (rest: any) => {
   const query = useQuery({
-    queryKey: ["querySectors"],
+    queryKey: ["useFetchSectors"],
     queryFn: () => querySectors(),
-    enabled: true,
+    // enabled: true,
 
     ...rest,
   });

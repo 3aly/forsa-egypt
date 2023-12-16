@@ -9,10 +9,8 @@
       "@screens/*": ["./src/screens/*"],
       "@assets/*": ["./src/assets/*"],
       "@hooks/*": ["./src/hooks/*"],
-      "@store/*": ["./src/store/*"],
       "@services/*": ["./src/services/*"],
-      "@forms/*": ["./src/forms/*"],
-      "@enums/*": ["./src/enums/*"]
+      "@constants/*": ["./src/constants/*"]
     }
   }
 }

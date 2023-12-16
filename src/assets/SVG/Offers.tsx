@@ -1,15 +1,9 @@
-import React from 'react';
-import Svg, {Path} from 'react-native-svg';
+import React from "react";
+import Svg, { Path } from "react-native-svg";
 
-const Offers = props => {
+const Offers = () => {
   return (
-    <Svg
-      width={props?.params?.width ? props?.params?.width : 23}
-      height={props?.params?.height ? props?.params?.height : 22}
-      strokeWidth={2}
-      viewBox="0 0 23 22"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+    <Svg width={23} height={22} strokeWidth={2} viewBox="0 0 23 22" fill="none">
       <Path
         d="M2.52269 14.5775L7.433 19.4878C8.40424 20.4562 9.71982 21 11.0913 21C12.4629 21 13.7785 20.4562 14.7497 19.4878L19.5083 14.7293C20.4766 13.758 21.0204 12.4424 21.0204 11.0709C21.0204 9.69938 20.4766 8.3838 19.5083 7.41256L14.5871 2.51309C14.0783 2.00288 13.4681 1.60514 12.7959 1.3456C12.1237 1.08606 11.4045 0.970501 10.6849 1.00639L5.2651 1.26654C3.09719 1.3641 1.3737 3.08758 1.2653 5.24465L1.00516 10.6644C0.940118 12.1278 1.49293 13.5477 2.52269 14.5775Z"
         stroke="#435363"

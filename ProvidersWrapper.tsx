@@ -3,9 +3,11 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { ReactQueryProvider } from "./src/providers/ReactQueryProvider";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export default function ProvidersWrapper({ children }) {
+  const queryClient = new QueryClient();
+
   const config = {
     screens: {
       SellingOrderStackNavigator: {
@@ -19,7 +21,7 @@ export default function ProvidersWrapper({ children }) {
   return (
     <>
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <ReactQueryProvider>
+        <QueryClientProvider client={queryClient}>
           <SafeAreaProvider>
             <NavigationContainer
               linking={{
@@ -34,7 +36,7 @@ export default function ProvidersWrapper({ children }) {
               {children}
             </NavigationContainer>
           </SafeAreaProvider>
-        </ReactQueryProvider>
+        </QueryClientProvider>
       </GestureHandlerRootView>
     </>
   );

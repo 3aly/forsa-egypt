@@ -1,9 +1,8 @@
 // import { Dashboard } from "@/navigation/navigators";
 import { DashboardNavigator } from "@navigation/navigators";
-import ProvidersWrapper from "./ProvidersWrapper";
-import { Home } from "./src/screens/index";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import ProvidersWrapper from "./ProvidersWrapper";
 
 function App() {
   return (

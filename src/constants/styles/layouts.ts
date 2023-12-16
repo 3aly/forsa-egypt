@@ -32,6 +32,7 @@ const layouts = {
   selfStart: { alignSelf: "flex-start" } as ViewStyle,
   selfCenter: { alignSelf: "center" } as ViewStyle,
   contentStart: { alignContent: "flex-start" } as ViewStyle,
+  contentBetween: { alignContent: "space-between" } as ViewStyle,
 
   // Padding
   ps: {
@@ -83,6 +84,17 @@ const layouts = {
     bigxl: { paddingBottom: spacing.bigxl },
   },
 
+  p: {
+    xs: { padding: spacing.xs },
+    sm: { padding: spacing.sm },
+    md: { padding: spacing.md },
+    lg: { padding: spacing.lg },
+    mlg: { padding: spacing.mlg },
+    mmlg: { padding: spacing.mmlg },
+    xl: { padding: spacing.xl },
+    xxl: { padding: spacing.xxl },
+    xxxl: { padding: spacing.xxxl },
+  },
   px: {
     xs: { paddingHorizontal: spacing.xs },
     sm: { paddingHorizontal: spacing.sm },

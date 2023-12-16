@@ -1,15 +1,31 @@
-import { Home, HomeFocus, Offers, Profile, Retail } from "@assets/SVG";
+import {
+  Favorite,
+  Home,
+  HomeFocus,
+  Logo,
+  Note,
+  Notification,
+  Offers,
+  Profile,
+  Retail,
+} from "@assets/SVG";
+import Search from "@assets/SVG/Search";
 import React from "react";
 import { ViewStyle } from "react-native";
 
 export type Props = {
-  source: "Home" | "HomeFocus" | "Offers" | "Retail" | "Profile";
+  source:
+    | "Home"
+    | "HomeFocus"
+    | "Offers"
+    | "Retail"
+    | "Profile"
+    | "Logo"
+    | "Search"
+    | "Favorite"
+    | "Notification"
+    | "Note";
 
-  width?: number;
-  height?: number;
-  color?: string;
-  rotateDegree?: number;
-  opacity?: number;
   style?: ViewStyle;
   onPress?: Function;
 };
@@ -19,11 +35,16 @@ type svgType = {
 
 const SVG = (props: Props) => {
   const SVGNames: svgType = {
-    Home: <Home params={props} />,
-    HomeFocus: <HomeFocus params={props} />,
-    Offers: <Offers params={props} />,
-    Retail: <Retail params={props} />,
-    Profile: <Profile params={props} />,
+    Home: <Home />,
+    HomeFocus: <HomeFocus />,
+    Offers: <Offers />,
+    Retail: <Retail />,
+    Profile: <Profile />,
+    Logo: <Logo />,
+    Search: <Search />,
+    Favorite: <Favorite />,
+    Notification: <Notification />,
+    Note: <Note />,
   };
 
   return SVGNames[props.source];
