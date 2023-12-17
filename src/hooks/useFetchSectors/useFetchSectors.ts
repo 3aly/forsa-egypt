@@ -5,7 +5,7 @@ export const useFetchSectors = (rest: any) => {
   const query = useQuery({
     queryKey: ["useFetchSectors"],
     queryFn: () => querySectors(),
-    // enabled: true,
+    enabled: true,
 
     ...rest,
   });

@@ -1,8 +1,10 @@
 import {
+  Arrow,
   Favorite,
   Home,
   HomeFocus,
   Logo,
+  Nike,
   Note,
   Notification,
   Offers,
@@ -24,7 +26,9 @@ export type Props = {
     | "Search"
     | "Favorite"
     | "Notification"
-    | "Note";
+    | "Note"
+    | "Nike"
+    | "Arrow";
 
   style?: ViewStyle;
   onPress?: Function;
@@ -45,6 +49,8 @@ const SVG = (props: Props) => {
     Favorite: <Favorite />,
     Notification: <Notification />,
     Note: <Note />,
+    Nike: <Nike />,
+    Arrow: <Arrow />,
   };
 
   return SVGNames[props.source];

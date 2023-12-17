@@ -7,3 +7,5 @@ export { default as Logo } from "./Logo";
 export { default as Favorite } from "./Favorite";
 export { default as Notification } from "./Notification";
 export { default as Note } from "./Note";
+export { default as Nike } from "./Nike";
+export { default as Arrow } from "./Arrow";

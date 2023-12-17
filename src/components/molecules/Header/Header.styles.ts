@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   leftContainer: {
     ...layouts.row,
     // ...layouts.px.xl,
-    width: "16%",
+    flex: 0.2,
     ...layouts.justifyBetween,
     // ...layouts.xCentered,
     // ...layouts.yCentered,

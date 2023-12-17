@@ -4,4 +4,5 @@ type images = {
 
 export const IMAGES: images = {
   headerBG: require("./images/HeaderBackground.png"),
+  bannerBG: require("./images/BannerBG.png"),
 };
