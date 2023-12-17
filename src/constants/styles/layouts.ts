@@ -120,7 +120,17 @@ const layouts = {
   },
 
   // Margin
-
+  m: {
+    xs: { margin: spacing.xs },
+    sm: { margin: spacing.sm },
+    md: { margin: spacing.md },
+    lg: { margin: spacing.lg },
+    mlg: { margin: spacing.mlg },
+    mmlg: { margin: spacing.mmlg },
+    xl: { margin: spacing.xl },
+    xxl: { margin: spacing.xxl },
+    xxxl: { margin: spacing.xxxl },
+  },
   ms: {
     xs: { marginStart: spacing.xs },
     sm: { marginStart: spacing.sm },

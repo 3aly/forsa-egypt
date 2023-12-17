@@ -6,16 +6,11 @@ import { t } from "i18next";
 import { IMAGES } from "@assets/index";
 import { FlatList } from "react-native-gesture-handler";
 import { Brand, Sector } from "@components/molecules";
+import { BrandsProps } from "@types/props";
+import { BrandType } from "@types/types";
 
-const Brands = ({ brands, activeCategory }) => {
-  const [activeIndex, setActiveIndex] = useState();
-  console.log(brands);
-  const handleItemPress = (index) => {
-    console.log("index: " + index);
-    setActiveIndex(index);
-  };
-
-  const renderItem = ({ item, index }) => {
+const Brands = ({ brands, activeCategory }: BrandsProps) => {
+  const renderItem = ({ item, index }: { item: BrandType; index: number }) => {
     return (
       <>
         <Brand {...{ item, index }} />
@@ -29,7 +24,7 @@ const Brands = ({ brands, activeCategory }) => {
         data={
           activeCategory === "All"
             ? brands
-            : brands.filter((item) => item.sector.title === activeCategory)
+            : brands?.filter((item) => item.sector.title === activeCategory)
         }
         contentContainerStyle={styles.contentContainer}
         renderItem={renderItem}

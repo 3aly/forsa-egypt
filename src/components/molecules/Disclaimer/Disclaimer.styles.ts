@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     ...layouts.px.xl,
     ...layouts.py.lg,
     // ...layouts.my.xl,
-    ...layouts.mx.xxl,
+    ...layouts.mx.xl,
     ...layouts.rounded,
     borderColor: "#FFC709",
     borderWidth: 1,

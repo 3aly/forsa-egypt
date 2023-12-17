@@ -6,14 +6,20 @@ import { t } from "i18next";
 import { IMAGES } from "@assets/index";
 import { FlatList } from "react-native-gesture-handler";
 import { Sector } from "@components/molecules";
+import { SectorsProps } from "@types/props";
+import { SectorType } from "@types/types";
 
-const Sectors = ({ sectors, activeIndex, setActiveIndex }) => {
-  const handleItemPress = (index, label) => {
+const Sectors = ({
+  sectors = [],
+  activeIndex,
+  setActiveIndex,
+}: SectorsProps) => {
+  const handleItemPress = (index: number, label: string) => {
     console.log("index: " + index);
     setActiveIndex({ index, label });
   };
 
-  const renderItem = ({ item, index }) => {
+  const renderItem = ({ item, index }: { item: SectorType; index: number }) => {
     const isActive = activeIndex.index === index;
     return (
       <>
@@ -22,7 +28,8 @@ const Sectors = ({ sectors, activeIndex, setActiveIndex }) => {
     );
   };
   return (
-    <>
+    <View style={styles.contentContainer}>
+      <Text style={styles.headline}>Top brands in retail</Text>
       <FlatList
         showsHorizontalScrollIndicator={false}
         data={[{ label: "All" }, ...sectors]}
@@ -30,7 +37,7 @@ const Sectors = ({ sectors, activeIndex, setActiveIndex }) => {
         renderItem={renderItem}
         horizontal
       />
-    </>
+    </View>
   );
 };
 

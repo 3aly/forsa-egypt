@@ -9,6 +9,7 @@ import {
   Notification,
   Offers,
   Profile,
+  ProfileFocus,
   Retail,
 } from "@assets/SVG";
 import Search from "@assets/SVG/Search";
@@ -28,7 +29,8 @@ export type Props = {
     | "Notification"
     | "Note"
     | "Nike"
-    | "Arrow";
+    | "Arrow"
+    | "ProfileFocus";
 
   style?: ViewStyle;
   onPress?: Function;
@@ -51,6 +53,7 @@ const SVG = (props: Props) => {
     Note: <Note />,
     Nike: <Nike />,
     Arrow: <Arrow />,
+    ProfileFocus: <ProfileFocus />,
   };
 
   return SVGNames[props.source];

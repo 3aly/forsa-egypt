@@ -6,14 +6,15 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   itemContainer: {
     ...layouts.allCentered,
-    ...layouts.mx.lg,
-    ...layouts.px.sm,
+    ...layouts.me.lg,
+    ...layouts.px.md,
+    ...layouts.py.sm,
   },
   activeItem: {
     backgroundColor: "#3EBDAC",
     color: "#FFFFFF",
-    ...layouts.rounded,
-    // ...layouts.p.xl,
+    borderRadius: 5,
+    ...layouts.p.xl,
   },
   activeText: {
     color: "#FFFFFF",

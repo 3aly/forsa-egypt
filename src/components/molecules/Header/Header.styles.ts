@@ -7,19 +7,24 @@ const styles = StyleSheet.create({
     ...layouts.row,
     ...layouts.pt.xxxl,
     ...layouts.my.xl,
-    ...layouts.mx.xxl,
+    ...layouts.mx.xl,
 
-    // ...layouts.xCentered,
     ...layouts.justifyBetween,
     ...layouts.yCentered,
   },
+  title: {
+    color: "#FFF",
+
+    fontSize: 24,
+    fontWeight: "400",
+  },
   leftContainer: {
     ...layouts.row,
-    // ...layouts.px.xl,
     flex: 0.2,
     ...layouts.justifyBetween,
-    // ...layouts.xCentered,
-    // ...layouts.yCentered,
+  },
+  emptyView: {
+    flex: 0.2,
   },
 });
 

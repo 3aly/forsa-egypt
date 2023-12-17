@@ -5,7 +5,9 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   contentContainer: {
-    height: "20%",
+    ...layouts.mx.sm,
+    ...layouts.my.md,
+    // height: "60%",
   },
 });
 

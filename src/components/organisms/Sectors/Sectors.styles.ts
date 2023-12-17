@@ -4,9 +4,15 @@ import { StyleSheet } from "react-native";
 // import { layouts } from "src/constants";
 
 const styles = StyleSheet.create({
+  headline: {
+    fontSize: 18,
+    fontStyle: "normal",
+    fontWeight: "700",
+    ...layouts.mx.sm,
+    ...layouts.mb.md,
+  },
   contentContainer: {
-    height: "50%",
-    ...layouts.my.lg,
+    ...layouts.mx.md,
   },
 });
 

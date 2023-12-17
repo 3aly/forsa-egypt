@@ -1,28 +1,35 @@
-import { View, Text, ImageBackground } from "react-native";
+import { View, ImageBackground, ScrollView } from "react-native";
 import React, { useState } from "react";
-import { useFetchSectors } from "@hooks/index";
+import {
+  useFetchSectors,
+  useFetchBrands,
+  useFetchAdditionalLoans,
+  useFetchOffers,
+} from "@hooks/index";
 import { Banner, Disclaimer, Header } from "@components/molecules";
 import { IMAGES } from "@assets/index";
 import styles from "./Home.styles";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import { Sectors } from "@components/organisms";
-import Brands from "@components/organisms/Brands/Brands";
-import { useFetchBrands } from "@hooks/useFetchBrands/useFetchBrands";
+
+import {
+  AdditionalLoans,
+  Brands,
+  Offers,
+  Sectors,
+} from "@components/organisms";
 
 const Home = () => {
   const { data: sectors, isLoading, error } = useFetchSectors({});
   const { data: brands, isLoading: brandsLoading } = useFetchBrands({});
-  // console.log("first response: ", data.results);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const { data: loans, isLoading: loansLoading } = useFetchAdditionalLoans({});
+  const { data: offers, isLoading: offersLoading } = useFetchOffers({});
+  const [activeIndex, setActiveIndex] = useState<{
+    index: number;
+    label: string;
+  }>({ index: 0, label: "All" });
 
   return (
     <View style={styles.container}>
-      <ImageBackground
-        style={styles.imageContainer}
-        source={IMAGES.headerBG}
-        // style={{ flex: 1}}
-      >
+      <ImageBackground style={styles.imageContainer} source={IMAGES.headerBG}>
         <Header />
         <Disclaimer />
         <Banner />
@@ -31,7 +38,11 @@ const Home = () => {
           {...{ activeIndex, setActiveIndex }}
         />
       </ImageBackground>
-      <Brands brands={brands?.results} activeCategory={activeIndex.label} />
+      <ScrollView>
+        <Brands brands={brands?.results} activeCategory={activeIndex.label} />
+        <AdditionalLoans loans={loans?.results} />
+        <Offers offers={offers?.results} />
+      </ScrollView>
     </View>
   );
 };

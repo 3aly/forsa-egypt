@@ -1,14 +1,20 @@
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import React from "react";
 import { SVG } from "@components/atoms";
 import styles from "./Header.styles";
+import { HeaderProps } from "@types/props";
 
-const Header = () => {
+const Header = ({ showSearch = true, title }: HeaderProps) => {
   return (
     <View style={styles.container}>
-      <SVG source="Search" />
+      {showSearch ? (
+        <SVG source="Search" />
+      ) : (
+        <View style={styles.emptyView}></View>
+      )}
+      {!title && <SVG source="Logo" />}
+      {title && <Text style={styles.title}>{title}</Text>}
 
-      <SVG source="Logo" />
       <View style={styles.leftContainer}>
         <SVG source="Favorite" />
         <SVG source="Notification" />
