@@ -1,13 +1,8 @@
-import { Image, ImageBackground, Pressable, Text, View } from "react-native";
 import React, { useState } from "react";
-import { SVG } from "@components/atoms";
 import styles from "./Brands.styles";
-import { t } from "i18next";
-import { IMAGES } from "@assets/index";
 import { FlatList } from "react-native-gesture-handler";
-import { Brand, Sector } from "@components/molecules";
-import { BrandsProps } from "@types/props";
-import { BrandType } from "@types/types";
+import { Brand } from "@components/molecules";
+import { BrandType, BrandsProps } from "src/types";
 
 const Brands = ({ brands, activeCategory }: BrandsProps) => {
   const renderItem = ({ item, index }: { item: BrandType; index: number }) => {
@@ -24,7 +19,9 @@ const Brands = ({ brands, activeCategory }: BrandsProps) => {
         data={
           activeCategory === "All"
             ? brands
-            : brands?.filter((item) => item.sector.title === activeCategory)
+            : brands?.filter(
+                (item: BrandType) => item.sector.title === activeCategory
+              )
         }
         contentContainerStyle={styles.contentContainer}
         renderItem={renderItem}

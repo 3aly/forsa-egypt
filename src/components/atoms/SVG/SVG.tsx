@@ -33,6 +33,7 @@ export type Props = {
     | "ProfileFocus";
 
   style?: ViewStyle;
+  color?: string;
   onPress?: Function;
 };
 type svgType = {

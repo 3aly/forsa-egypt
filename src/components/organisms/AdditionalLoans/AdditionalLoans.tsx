@@ -13,9 +13,8 @@ import { t } from "i18next";
 import { IMAGES } from "@assets/index";
 import { FlatList } from "react-native-gesture-handler";
 import { Brand, Loan, Sector } from "@components/molecules";
-import { AdditionalLoansProps } from "@types/props";
 import getRandomGradient from "@utils/getRandomGradient";
-import { LoanType } from "@types/types";
+import { AdditionalLoansProps, LoanType } from "src/types";
 
 const AdditionalLoans = ({ loans }: AdditionalLoansProps) => {
   const renderItem = ({ item, index }: { item: LoanType; index: number }) => {

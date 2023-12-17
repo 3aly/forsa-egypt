@@ -1,16 +1,14 @@
-import { Dimensions, Image, Pressable, Text, View } from "react-native";
+import { Dimensions, Image, Text, View } from "react-native";
 import React from "react";
 import styles from "./Offer.styles";
-import { BrandProps, LoanProps } from "@types/props";
-import getRandomGradient from "@utils/getRandomGradient";
-import { LinearGradient } from "expo-linear-gradient";
+import { OfferProps } from "src/types";
 
-const Offer = ({ item, index }: LoanProps) => {
+const Offer = ({ item, index }: OfferProps) => {
   return (
     <View style={styles.itemContainer} key={index}>
       <Image
-        source={{ uri: item.background }} // Replace with your image source
-        style={[styles.imageContainer]} // Adjust size and style as needed
+        source={{ uri: item.background }}
+        style={[styles.imageContainer]}
       />
       <View style={styles.textContainer}>
         <Text style={styles.category}>{item.brand.sector.title_en}</Text>

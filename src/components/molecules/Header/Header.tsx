@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 import React from "react";
 import { SVG } from "@components/atoms";
 import styles from "./Header.styles";
-import { HeaderProps } from "@types/props";
+import { HeaderProps } from "src/types";
 
 const Header = ({ showSearch = true, title }: HeaderProps) => {
   return (

@@ -1,12 +1,7 @@
 import React from "react";
 import { t } from "i18next";
-// import { SheetManager } from "react-native-actions-sheet";
-// import { DashboardTabsParamList } from "@navigation/models";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-// import styles from "./navigators.styles";
-// import { User } from "@common/types";
-// import { Icon, SVG } from "@common/components";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { Text, View } from "react-native";
 import { Home, Offers, Profile, Retail } from "@screens/index";

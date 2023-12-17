@@ -10,7 +10,7 @@ const Disclaimer = () => {
       <SVG source="Note" />
 
       <View style={styles.leftContainer}>
-        <Text style={styles.title}>Get your limit</Text>
+        <Text style={styles.title}>{t("ad")}</Text>
         <Text style={styles.subtitle}>
           Complete your infoand get up to EGP 100,000
         </Text>

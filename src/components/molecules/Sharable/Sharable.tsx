@@ -1,8 +1,8 @@
 import { Dimensions, Image, Pressable, Share, Text, View } from "react-native";
 import React from "react";
-import { BrandProps, LoanProps, SharableProps } from "@types/props";
 
 import styles from "./Sharable.styles";
+import { SharableProps } from "src/types";
 
 const Sharable = ({ title, toShare }: SharableProps) => {
   return (

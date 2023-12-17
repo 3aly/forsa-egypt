@@ -12,10 +12,6 @@ const styles = StyleSheet.create({
   image: {
     width: px(120), // Adjust width based on desired size
     height: px(120), // Adjust height based on desired size
-    // borderColor: "#D4D4D4",
-    // borderWidth: 1,
-    // ...layouts.mx.lg,
-    // backgroundColor: "#D4D1Df",
   },
   text: {
     ...layouts.ms.xl,

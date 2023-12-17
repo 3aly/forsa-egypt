@@ -1,27 +1,14 @@
-import {
-  Dimensions,
-  Image,
-  ImageBackground,
-  Pressable,
-  Text,
-  View,
-} from "react-native";
-import React, { useState } from "react";
-import { SVG } from "@components/atoms";
+import { Text, View } from "react-native";
+import React from "react";
 import styles from "./Offers.styles";
-import { t } from "i18next";
-import { IMAGES } from "@assets/index";
+
 import { FlatList } from "react-native-gesture-handler";
-import { Brand, Loan, Offer, Sector } from "@components/molecules";
-import { AdditionalLoansProps, OffersProps } from "@types/props";
-import getRandomGradient from "@utils/getRandomGradient";
-import { LoanType } from "@types/types";
+
+import { OfferProps, OffersProps } from "src/types";
+import { Offer } from "@components/molecules";
 
 const Offers = ({ offers }: OffersProps) => {
-  const itemWidth = Dimensions.get("window").width / 2;
-
-  const renderItem = ({ item, index }) => {
-    console.log("item renderedrenderedrendered", item);
+  const renderItem = ({ item, index }: OfferProps) => {
     return (
       <>
         <Offer {...{ item, index }} />
@@ -38,7 +25,6 @@ const Offers = ({ offers }: OffersProps) => {
         data={offers}
         contentContainerStyle={styles.contentContainer}
         renderItem={renderItem}
-        // horizontal
         numColumns={2}
       />
     </View>

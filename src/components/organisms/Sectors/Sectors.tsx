@@ -1,13 +1,10 @@
-import { ImageBackground, Pressable, Text, View } from "react-native";
-import React, { useState } from "react";
-import { SVG } from "@components/atoms";
+import { Text, View } from "react-native";
+import React from "react";
 import styles from "./Sectors.styles";
-import { t } from "i18next";
-import { IMAGES } from "@assets/index";
+
 import { FlatList } from "react-native-gesture-handler";
 import { Sector } from "@components/molecules";
-import { SectorsProps } from "@types/props";
-import { SectorType } from "@types/types";
+import { SectorType, SectorsProps } from "src/types";
 
 const Sectors = ({
   sectors = [],

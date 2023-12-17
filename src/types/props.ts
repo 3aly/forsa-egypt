@@ -1,5 +1,11 @@
 import { Dispatch, SetStateAction } from "react";
-import { BrandType, LoanType, SectorType } from ".";
+import { BrandType, LoanType, OfferType, SectorType } from "./type";
+import {
+  ImageBackground,
+  ImageBackgroundProps,
+  ImageSourcePropType,
+} from "react-native";
+import { ImageProps } from "react-native-svg";
 
 export type HeaderProps = {
   showSearch?: boolean;
@@ -14,7 +20,7 @@ export type SectorProps = {
   item: SectorType;
   index: number;
   isActive: boolean;
-  handleItemPress: () => {};
+  handleItemPress: (index: number, label: string) => void;
 };
 export type BrandsProps = {
   brands: Array<BrandType>;
@@ -32,35 +38,17 @@ export type LoanProps = {
   index: number;
 };
 export type OffersProps = {
-  loans: Array<LoanType>;
+  offers: Array<OfferType>;
+};
+export type OfferProps = {
+  item: OfferType;
+  index: number;
 };
 export type SharableProps = {
   toShare: string;
   title: string;
 };
-// export interface MovieModalProps extends MoviePosterProps {
-//   open: boolean;
-//   setOpen: Dispatch<SetStateAction<boolean>>;
-// }
-
-// export type MoviesProps = {
-//   moviesData: Array<MoviesDataType>;
-// };
-
-// export type SectionTitleProps = {
-//   title: string;
-// };
-// export type ImdbRatingProps = {
-//   rating: number;
-// };
-
-export type SearchBarProps = {
-  title?: string;
-  setSearchTerm: Dispatch<SetStateAction<string>>;
-};
-export type NavBarProps = {
-  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
-};
-export type LoaderProps = {
-  isLoading?: boolean;
+export type ProfileCardProps = {
+  pic: ImageSourcePropType;
+  name: string;
 };

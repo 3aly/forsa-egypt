@@ -1,7 +1,7 @@
 import { Pressable, Text, View } from "react-native";
 import React from "react";
 import styles from "./Sector.styles";
-import { SectorProps } from "@types/index";
+import { SectorProps } from "src/types";
 
 const Sector = ({ item, isActive, handleItemPress, index }: SectorProps) => {
   return (

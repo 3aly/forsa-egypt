@@ -18,10 +18,10 @@ import {
 } from "@components/organisms";
 
 const Home = () => {
-  const { data: sectors, isLoading, error } = useFetchSectors({});
-  const { data: brands, isLoading: brandsLoading } = useFetchBrands({});
-  const { data: loans, isLoading: loansLoading } = useFetchAdditionalLoans({});
-  const { data: offers, isLoading: offersLoading } = useFetchOffers({});
+  const { data: sectors, isLoading, error } = useFetchSectors();
+  const { data: brands, isLoading: brandsLoading } = useFetchBrands();
+  const { data: loans, isLoading: loansLoading } = useFetchAdditionalLoans();
+  const { data: offers, isLoading: offersLoading } = useFetchOffers();
   const [activeIndex, setActiveIndex] = useState<{
     index: number;
     label: string;
