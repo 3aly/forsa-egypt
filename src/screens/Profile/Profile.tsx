@@ -17,7 +17,7 @@ const Profile = () => {
         <Header showSearch={false} title={t("profile")} />
       </ImageBackground>
       <ProfileCard pic={IMAGES.me} name={t("me")} />
-      <Sharable title={t("share_app")} toShare="Forsa egypt is awesome!" />
+      <Sharable title={t("share_app")} toShare={t("share")} />
       <LangPicker />
     </View>
   );
