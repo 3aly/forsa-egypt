@@ -1,4 +1,4 @@
-import { View, ImageBackground, ScrollView } from "react-native";
+import { View, ImageBackground, ScrollView, FlatList } from "react-native";
 import React, { useState } from "react";
 import {
   useFetchSectors,
@@ -16,6 +16,7 @@ import {
   Offers,
   Sectors,
 } from "@components/organisms";
+import { t } from "i18next";
 
 const Home = () => {
   const { data: sectors, isLoading: sectorLoading, error } = useFetchSectors();
@@ -25,8 +26,44 @@ const Home = () => {
   const [activeIndex, setActiveIndex] = useState<{
     index: number;
     label: string;
-  }>({ index: 0, label: "All" });
+  }>({ index: 0, label: t("all") });
+  const renderItem = ({
+    item,
+    index,
+  }: {
+    item: { name: string; data: []; loading: boolean };
+    index: number;
+  }) => {
+    switch (item.name) {
+      case "brands":
+        return (
+          <>
+            <Brands
+              brands={item.data}
+              activeCategory={activeIndex.label}
+              isLoading={item.loading}
+            />
+          </>
+        );
+      case "loans":
+        return (
+          <>
+            <AdditionalLoans loans={item.data} isLoading={item.loading} />
+          </>
+        );
+      case "offers":
+        return (
+          <>
+            <>
+              <Offers offers={item.data} isLoading={item.loading} />
+            </>
+          </>
+        );
 
+      default:
+        return <></>;
+    }
+  };
   return (
     <View style={styles.container}>
       <ImageBackground style={styles.imageContainer} source={IMAGES.headerBG}>
@@ -39,15 +76,16 @@ const Home = () => {
           isLoading={sectorLoading}
         />
       </ImageBackground>
-      <ScrollView>
-        <Brands
-          brands={brands?.results}
-          activeCategory={activeIndex.label}
-          isLoading={brandsLoading}
-        />
-        <AdditionalLoans loans={loans?.results} isLoading={loansLoading} />
-        <Offers offers={offers?.results} isLoading={offersLoading} />
-      </ScrollView>
+      <FlatList
+        showsHorizontalScrollIndicator={false}
+        data={[
+          { name: "brands", data: brands?.results, loading: brandsLoading },
+          { name: "loans", data: loans?.results, loading: loansLoading },
+          { name: "offers", data: offers?.results, loading: offersLoading },
+        ]}
+        renderItem={renderItem}
+      />
+      <ScrollView></ScrollView>
     </View>
   );
 };
