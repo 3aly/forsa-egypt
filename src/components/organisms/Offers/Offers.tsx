@@ -6,8 +6,10 @@ import { FlatList } from "react-native-gesture-handler";
 
 import { OfferProps, OffersProps } from "src/types";
 import { Offer } from "@components/molecules";
+import { t } from "i18next";
+import { Loader } from "@components/atoms";
 
-const Offers = ({ offers }: OffersProps) => {
+const Offers = ({ offers, isLoading }: OffersProps) => {
   const renderItem = ({ item, index }: OfferProps) => {
     return (
       <>
@@ -18,15 +20,22 @@ const Offers = ({ offers }: OffersProps) => {
 
   return (
     <View style={styles.contentContainer}>
-      <Text style={styles.headline}>Offers Select for You </Text>
-
-      <FlatList
-        showsHorizontalScrollIndicator={false}
-        data={offers}
-        contentContainerStyle={styles.contentContainer}
-        renderItem={renderItem}
-        numColumns={2}
-      />
+      <Text style={styles.headline}>{t("offers")}</Text>
+      {isLoading ? (
+        <>
+          <Loader />
+        </>
+      ) : (
+        <>
+          <FlatList
+            showsHorizontalScrollIndicator={false}
+            data={offers}
+            contentContainerStyle={styles.contentContainer}
+            renderItem={renderItem}
+            numColumns={2}
+          />
+        </>
+      )}
     </View>
   );
 };

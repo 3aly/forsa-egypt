@@ -5,11 +5,14 @@ import styles from "./Sectors.styles";
 import { FlatList } from "react-native-gesture-handler";
 import { Sector } from "@components/molecules";
 import { SectorType, SectorsProps } from "src/types";
+import { t } from "i18next";
+import { Loader } from "@components/atoms";
 
 const Sectors = ({
   sectors = [],
   activeIndex,
   setActiveIndex,
+  isLoading,
 }: SectorsProps) => {
   const handleItemPress = (index: number, label: string) => {
     console.log("index: " + index);
@@ -26,14 +29,22 @@ const Sectors = ({
   };
   return (
     <View style={styles.contentContainer}>
-      <Text style={styles.headline}>Top brands in retail</Text>
-      <FlatList
-        showsHorizontalScrollIndicator={false}
-        data={[{ label: "All" }, ...sectors]}
-        contentContainerStyle={styles.contentContainer}
-        renderItem={renderItem}
-        horizontal
-      />
+      <Text style={styles.headline}>{t("sectors_one")}</Text>
+      {isLoading ? (
+        <>
+          <Loader />
+        </>
+      ) : (
+        <>
+          <FlatList
+            showsHorizontalScrollIndicator={false}
+            data={[{ label: `${t("all")}` }, ...sectors]}
+            contentContainerStyle={styles.contentContainer}
+            renderItem={renderItem}
+            horizontal
+          />
+        </>
+      )}
     </View>
   );
 };

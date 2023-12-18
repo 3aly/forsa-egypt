@@ -1,4 +1,4 @@
-import { Dimensions, Image, Pressable, Text, View } from "react-native";
+import { I18nManager, Text } from "react-native";
 import React from "react";
 import styles from "./Loan.styles";
 import { LinearGradient } from "expo-linear-gradient";
@@ -10,7 +10,9 @@ const Loan = ({ item, index }: LoanProps) => {
       colors={["#3FB3BE", "#0EBCB7", "#2A4D5C"]}
       style={[styles.itemContainer]}
     >
-      <Text style={{ color: "#fff" }}>{item.name}</Text>
+      <Text style={{ color: "#fff" }}>
+        {I18nManager.isRTL ? item.name_ar : item.name_en}
+      </Text>
     </LinearGradient>
   );
 };

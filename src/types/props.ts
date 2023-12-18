@@ -12,6 +12,7 @@ export type HeaderProps = {
   title?: string;
 };
 export type SectorsProps = {
+  isLoading?: boolean;
   sectors: Array<SectorType>;
   activeIndex: { index: number; label: string };
   setActiveIndex: Dispatch<SetStateAction<{ index: number; label: string }>>;
@@ -25,6 +26,7 @@ export type SectorProps = {
 export type BrandsProps = {
   brands: Array<BrandType>;
   activeCategory: string;
+  isLoading?: boolean;
 };
 export type BrandProps = {
   item: BrandType;
@@ -32,6 +34,7 @@ export type BrandProps = {
 };
 export type AdditionalLoansProps = {
   loans: Array<LoanType>;
+  isLoading?: boolean;
 };
 export type LoanProps = {
   item: LoanType;
@@ -39,6 +42,7 @@ export type LoanProps = {
 };
 export type OffersProps = {
   offers: Array<OfferType>;
+  isLoading: boolean;
 };
 export type OfferProps = {
   item: OfferType;

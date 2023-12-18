@@ -18,7 +18,7 @@ import {
 } from "@components/organisms";
 
 const Home = () => {
-  const { data: sectors, isLoading, error } = useFetchSectors();
+  const { data: sectors, isLoading: sectorLoading, error } = useFetchSectors();
   const { data: brands, isLoading: brandsLoading } = useFetchBrands();
   const { data: loans, isLoading: loansLoading } = useFetchAdditionalLoans();
   const { data: offers, isLoading: offersLoading } = useFetchOffers();
@@ -36,12 +36,17 @@ const Home = () => {
         <Sectors
           sectors={sectors?.results}
           {...{ activeIndex, setActiveIndex }}
+          isLoading={sectorLoading}
         />
       </ImageBackground>
       <ScrollView>
-        <Brands brands={brands?.results} activeCategory={activeIndex.label} />
-        <AdditionalLoans loans={loans?.results} />
-        <Offers offers={offers?.results} />
+        <Brands
+          brands={brands?.results}
+          activeCategory={activeIndex.label}
+          isLoading={brandsLoading}
+        />
+        <AdditionalLoans loans={loans?.results} isLoading={loansLoading} />
+        <Offers offers={offers?.results} isLoading={offersLoading} />
       </ScrollView>
     </View>
   );

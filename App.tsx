@@ -3,11 +3,12 @@ import { DashboardNavigator } from "@navigation/navigators";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import ProvidersWrapper from "./ProvidersWrapper";
+import "./src/locales/index";
 
 function App() {
   return (
     <View style={styles.container}>
-      {/* <StatusBar /> */}
+      <StatusBar style="light" />
       <DashboardNavigator />
     </View>
   );

@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  ImageBackground,
-  Button,
-  Share,
-  Pressable,
-} from "react-native";
+import { View, ImageBackground } from "react-native";
 import React from "react";
 import {
   Header,
@@ -15,15 +8,16 @@ import {
 } from "@components/molecules";
 import styles from "./Profile.styles";
 import { IMAGES } from "@assets/index";
+import { t } from "i18next";
 
 const Profile = () => {
   return (
     <View style={styles.container}>
       <ImageBackground style={styles.imageContainer} source={IMAGES.smallerBG}>
-        <Header showSearch={false} title={"Profile"} />
+        <Header showSearch={false} title={t("profile")} />
       </ImageBackground>
-      <ProfileCard pic={IMAGES.me} name={"Ali Hefny"} />
-      <Sharable title="Share the app" toShare="Share the app" />
+      <ProfileCard pic={IMAGES.me} name={t("me")} />
+      <Sharable title={t("share_app")} toShare="Share the app" />
       <LangPicker />
     </View>
   );

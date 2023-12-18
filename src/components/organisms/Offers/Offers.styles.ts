@@ -4,6 +4,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   contentContainer: {},
   headline: {
+    ...layouts.allCentered,
     fontSize: 18,
     fontStyle: "normal",
     fontWeight: "700",

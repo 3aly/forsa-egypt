@@ -8,6 +8,7 @@ import { Home, Offers, Profile, Retail } from "@screens/index";
 import { DashboardTabsParamList } from "@navigation/models";
 import { SVG } from "@components/atoms";
 import px from "@utils/responsiveUI";
+import styles from "./DashboardNavigator.styles";
 
 const DashboardTabs = createBottomTabNavigator<DashboardTabsParamList>();
 const DashboardNavigator = () => {
@@ -17,9 +18,15 @@ const DashboardNavigator = () => {
         tabBarLabelStyle: {
           color: "#000",
         },
-        tabBarStyle: { paddingTop: px(15) },
+        tabBarStyle: {
+          paddingTop: px(8),
+          alignContent: "center",
+
+          justifyContent: "center",
+          alignItems: "center",
+        },
         headerShown: false,
-        tabBarShowLabel: true,
+        tabBarShowLabel: false,
       }}
       initialRouteName="Home"
     >
@@ -28,14 +35,14 @@ const DashboardNavigator = () => {
         component={Home}
         options={{
           tabBarIcon: ({ focused }) => (
-            <View>
+            <View style={styles.container}>
               {focused ? (
                 <SVG source="HomeFocus" color="#072040" />
               ) : (
                 <SVG source="Home" />
               )}
 
-              <Text>{t("indicators")}</Text>
+              <Text>{t("home")}</Text>
             </View>
           ),
         }}
@@ -45,10 +52,10 @@ const DashboardNavigator = () => {
         component={Retail}
         options={{
           tabBarIcon: ({ focused }) => (
-            <View>
+            <View style={styles.container}>
               {focused ? <SVG source="Retail" /> : <SVG source="Retail" />}
 
-              <Text>{t("indicators")}</Text>
+              <Text>{t("retail")}</Text>
             </View>
           ),
         }}
@@ -58,10 +65,10 @@ const DashboardNavigator = () => {
         component={Offers}
         options={{
           tabBarIcon: ({ focused }) => (
-            <View>
+            <View style={styles.container}>
               {focused ? <SVG source="Offers" /> : <SVG source="Offers" />}
 
-              <Text>{t("indicators")}</Text>
+              <Text>{t("offer")}</Text>
             </View>
           ),
         }}
@@ -72,14 +79,14 @@ const DashboardNavigator = () => {
         component={Profile}
         options={{
           tabBarIcon: ({ focused }) => (
-            <View>
+            <View style={styles.container}>
               {focused ? (
                 <SVG source="ProfileFocus" />
               ) : (
                 <SVG source="Profile" />
               )}
 
-              <Text>{t("indicators")}</Text>
+              <Text>{t("profile")}</Text>
             </View>
           ),
         }}

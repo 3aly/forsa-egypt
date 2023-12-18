@@ -10,3 +10,4 @@ export { default as Note } from "./Note";
 export { default as Nike } from "./Nike";
 export { default as Arrow } from "./Arrow";
 export { default as ProfileFocus } from "./ProfileFocus";
+export { default as ArrowLeft } from "./ArrowLeft";

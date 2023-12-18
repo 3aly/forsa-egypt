@@ -1,5 +1,6 @@
 import {
   Arrow,
+  ArrowLeft,
   Favorite,
   Home,
   HomeFocus,
@@ -30,6 +31,7 @@ export type Props = {
     | "Note"
     | "Nike"
     | "Arrow"
+    | "ArrowLeft"
     | "ProfileFocus";
 
   style?: ViewStyle;
@@ -54,6 +56,7 @@ const SVG = (props: Props) => {
     Note: <Note />,
     Nike: <Nike />,
     Arrow: <Arrow />,
+    ArrowLeft: <ArrowLeft />,
     ProfileFocus: <ProfileFocus />,
   };
 
