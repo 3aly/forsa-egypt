@@ -14,11 +14,13 @@ export default function ProvidersWrapper({
 
   return (
     <>
-      <QueryClientProvider client={queryClient}>
-        <SafeAreaProvider>
-          <NavigationContainer>{children}</NavigationContainer>
-        </SafeAreaProvider>
-      </QueryClientProvider>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <QueryClientProvider client={queryClient}>
+          <SafeAreaProvider>
+            <NavigationContainer>{children}</NavigationContainer>
+          </SafeAreaProvider>
+        </QueryClientProvider>
+      </GestureHandlerRootView>
     </>
   );
 }
